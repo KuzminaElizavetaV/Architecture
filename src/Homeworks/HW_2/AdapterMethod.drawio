@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2023-10-19T14:59:39.585Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.3 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36" etag="mfkwxaLtbgg5cCLiqhpi" version="22.0.3" type="device">
+<mxfile host="Electron" modified="2023-10-19T15:13:00.591Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.3 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36" etag="Tyg6v4oCehagDMfUC63Y" version="22.0.3" type="device">
   <diagram name="Страница — 1" id="Jgajazlyqc_p2zB15pUA">
     <mxGraphModel dx="1098" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -149,7 +149,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="VWOWd641OQ4nVVWa5_6E-51" value="&lt;div style=&quot;background-color: rgb(43, 43, 43); color: rgb(169, 183, 198); font-family: &amp;quot;JetBrains Mono&amp;quot;, monospace;&quot;&gt;&lt;span style=&quot;color:#cc7832;&quot;&gt;public class &lt;/span&gt;Program {&lt;br&gt;    &lt;span style=&quot;color:#cc7832;&quot;&gt;public static void &lt;/span&gt;&lt;span style=&quot;color:#ffc66d;&quot;&gt;main&lt;/span&gt;(String[] args) {&lt;br&gt;        Database database = &lt;span style=&quot;color:#cc7832;&quot;&gt;new &lt;/span&gt;AdapterJavaToDatabase()&lt;span style=&quot;color:#cc7832;&quot;&gt;;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#cc7832;&quot;&gt;        &lt;/span&gt;database.create()&lt;span style=&quot;color:#cc7832;&quot;&gt;;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#cc7832;&quot;&gt;        &lt;/span&gt;database.read()&lt;span style=&quot;color:#cc7832;&quot;&gt;;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#cc7832;&quot;&gt;        &lt;/span&gt;database.update()&lt;span style=&quot;color:#cc7832;&quot;&gt;;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#cc7832;&quot;&gt;        &lt;/span&gt;database.delete()&lt;span style=&quot;color:#cc7832;&quot;&gt;;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#cc7832;&quot;&gt;    &lt;/span&gt;}&lt;br&gt;}&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="1">
-          <mxGeometry x="490" y="520" width="240" height="220" as="geometry" />
+          <mxGeometry x="420" y="520" width="390" height="220" as="geometry" />
         </mxCell>
         <mxCell id="VWOWd641OQ4nVVWa5_6E-54" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.008;entryY=0.541;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="VWOWd641OQ4nVVWa5_6E-15" target="VWOWd641OQ4nVVWa5_6E-51">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
