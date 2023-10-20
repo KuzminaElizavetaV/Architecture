@@ -70,7 +70,7 @@ public abstract class Car {
     private int wheelsCount;
 
     // Тип топлива
-    protected FuelType fuelType = FuelType.Diesel;
+    protected FuelType fuelType = FuelType.DIESEL;
 
     // Тип коробки передач
     private GearboxType gearboxType;

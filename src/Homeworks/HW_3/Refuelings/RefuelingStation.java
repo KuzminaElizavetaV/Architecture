@@ -4,8 +4,8 @@ public class RefuelingStation implements Refueling{
 
     public void processfuel(FuelType fuelType) {
         switch (fuelType){
-            case Diesel -> System.out.println("Заправка дизельным топливом");
-            case Gasoline -> System.out.println("Заправка бензином");
+            case DIESEL -> System.out.println("Заправка дизельным топливом");
+            case PETROL -> System.out.println("Заправка бензином");
         }
     }
 
