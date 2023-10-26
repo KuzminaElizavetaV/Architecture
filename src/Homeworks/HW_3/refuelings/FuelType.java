@@ -1,4 +1,4 @@
-package Homeworks.HW_3.Refuelings;
+package Homeworks.HW_3.refuelings;
 
 public enum FuelType {
     DIESEL,

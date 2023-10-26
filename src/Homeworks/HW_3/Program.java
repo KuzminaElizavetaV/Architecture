@@ -1,9 +1,16 @@
 package Homeworks.HW_3;
 
-import Homeworks.HW_3.Cars.Car;
-import Homeworks.HW_3.Cars.Harvester;
-import Homeworks.HW_3.Refuelings.RefuelingStation;
-import Homeworks.HW_3.Refuelings.RefuelingStationV2;
+import Homeworks.HW_3.cars.Car;
+import Homeworks.HW_3.cars.Crossover;
+import Homeworks.HW_3.cars.Harvester;
+import Homeworks.HW_3.cars.StationWagon;
+import Homeworks.HW_3.carservices.CarTireService;
+import Homeworks.HW_3.carwashes.CarClass;
+import Homeworks.HW_3.carwashes.CarWash;
+import Homeworks.HW_3.carwashes.CarWashStation;
+import Homeworks.HW_3.carwashes.WashType;
+import Homeworks.HW_3.refuelings.RefuelingStation;
+import Homeworks.HW_3.refuelings.RefuelingStationV2;
 
 import java.awt.*;
 
@@ -66,20 +73,47 @@ public class Program {
 
         RefuelingStation refuelingStation = new RefuelingStation();
         RefuelingStationV2 refuelingStation2 = new RefuelingStationV2();
+        CarWashStation carWashStation = new CarWashStation();
+        CarTireService carTireService = new CarTireService();
+
+        carTireService.setPriceReplaceTires(13, 375);
+        carTireService.setPriceReplaceTires(14, 390);
+        carTireService.setPriceReplaceTires(15, 405);
+        carTireService.setPriceReplaceTires(16, 420);
+        carTireService.setPriceReplaceTires(22, 550);
+
+        carTireService.setPriceReplaceWheels(13, 300);
+        carTireService.setPriceReplaceWheels(14, 320);
+        carTireService.setPriceReplaceWheels(15, 340);
+        carTireService.setPriceReplaceWheels(16, 360);
+        carTireService.setPriceReplaceWheels(22, 450);
+
 
         Harvester harvester = new Harvester("A", "B", Color.BLACK);
+        StationWagon stationWagon = new StationWagon("Lada", "Largus", Color.BLUE);
+        Crossover crossover = new Crossover("Toyota", "RAV4", Color.BLACK);
+
         harvester.setRefuelingStation(refuelingStation2);
         harvester.fuel();
+        stationWagon.setRefuelingStation(refuelingStation);
+        stationWagon.fuel();
+        crossover.setRefuelingStation(refuelingStation2);
+        crossover.fuel();
+
+        stationWagon.setCarWashStation(carWashStation);
+        stationWagon.wash(WashType.STANDART, CarClass.Third);
+        harvester.setCarWashStation(carWashStation);
+        harvester.wash(WashType.COMPLEX, CarClass.Fifth);
+        crossover.setCarWashStation(carWashStation);
+        crossover.wash(WashType.EXPRESS, CarClass.Fourth);
+
+        stationWagon.setCarTireService(carTireService);
+        harvester.setCarTireService(carTireService);
+        crossover.setCarTireService(carTireService);
+
+        harvester.diagnostics();
+        harvester.replaceTires();
+        stationWagon.replaceTires();
+        crossover.replaceWheels();
     }
-
-
-    public static double calculateMaintenance(Car car){
-        if (car.getWheelsCount() == 6){
-            return 1500*6;
-        }
-        else {
-            return 1000*4;
-        }
-    }
-
 }

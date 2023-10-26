@@ -1,8 +1,8 @@
-package Homeworks.HW_3.Refuelings;
+package Homeworks.HW_3.refuelings;
 
 public class RefuelingStation implements Refueling{
 
-    public void processfuel(FuelType fuelType) {
+    public void processFuel(FuelType fuelType) {
         switch (fuelType){
             case DIESEL -> System.out.println("Заправка дизельным топливом");
             case PETROL -> System.out.println("Заправка бензином");
@@ -11,6 +11,6 @@ public class RefuelingStation implements Refueling{
 
     @Override
     public void fuel(FuelType fuelType) {
-        processfuel(fuelType);
+        processFuel(fuelType);
     }
 }

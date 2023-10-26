@@ -1,4 +1,4 @@
-package Homeworks.HW_3.Cars;
+package Homeworks.HW_3.cars;
 
 import java.awt.*;
 
@@ -8,6 +8,7 @@ public class Harvester extends Car {
     public Harvester(String make, String model, Color color) {
         super(make, model, color);
         setWheelsCount(6);
+        setWheelRadius(22);
     }
 
     private boolean fogLights = false;

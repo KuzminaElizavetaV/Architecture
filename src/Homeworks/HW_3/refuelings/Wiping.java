@@ -1,4 +1,4 @@
-package Homeworks.HW_3;
+package Homeworks.HW_3.refuelings;
 
 /**
  * Дополнительные услуги

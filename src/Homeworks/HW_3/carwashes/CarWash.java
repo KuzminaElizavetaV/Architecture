@@ -1,7 +1,6 @@
 package Homeworks.HW_3.carwashes;
 
-import Homeworks.HW_3.Cars.CarType;
-import Homeworks.HW_3.Refuelings.FuelType;
+import Homeworks.HW_3.cars.CarType;
 
 /**
  * Автомойка
@@ -10,5 +9,5 @@ public interface CarWash {
     /**
      * Мыть машину
      */
-    void wash(WashType washType, CarType carType);
+    void wash(WashType washType, CarClass carClass);
 }

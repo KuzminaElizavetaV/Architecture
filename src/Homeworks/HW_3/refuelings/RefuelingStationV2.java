@@ -1,6 +1,6 @@
-package Homeworks.HW_3.Refuelings;
+package Homeworks.HW_3.refuelings;
 
-public class RefuelingStationV2 implements Refueling {
+public class RefuelingStationV2 implements Refueling, Wiping {
 
     public void processCarFuel(FuelType fuelType) {
         switch (fuelType){
@@ -13,4 +13,18 @@ public class RefuelingStationV2 implements Refueling {
         processCarFuel(fuelType);
     }
 
+    @Override
+    public void wipMirrors() {
+
+    }
+
+    @Override
+    public void wipWindshield() {
+
+    }
+
+    @Override
+    public void wipHeadlights() {
+
+    }
 }

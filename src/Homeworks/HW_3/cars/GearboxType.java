@@ -1,4 +1,4 @@
-package Homeworks.HW_3.Cars;
+package Homeworks.HW_3.cars;
 
 /**
  * Тип коробки передач

@@ -1,12 +1,19 @@
-package Homeworks.HW_3.Cars;
+package Homeworks.HW_3.cars;
+
+import Homeworks.HW_3.refuelings.FuelType;
 
 import java.awt.*;
 
-public class SoprtCar extends Car {
-    public SoprtCar(String make, String model, Color color) {
+public class StationWagon extends Car {
+    public StationWagon(String make, String model, Color color) {
         super(make, model, color);
-        setWheelsCount(3);
+        setWheelsCount(4);
+        setWheelRadius(15);
+        this.fuelType = FuelType.PETROL;
+        this.type = CarType.StationWagon;
+        setGearboxType(GearboxType.MT);
     }
+
 
     @Override
     public void movement() {
@@ -32,4 +39,6 @@ public class SoprtCar extends Car {
     public boolean switchWipers() {
         return false;
     }
+
+
 }
