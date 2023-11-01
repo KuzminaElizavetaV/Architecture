@@ -47,7 +47,7 @@ public class EditorBusinessLogicalLayer implements BusinessLogicalLayer {
         for (Model3D model: getAllModels()) {
             if (model.getId() == modelID) {
                 databaseAccess.removeEntity(model);
-                System.out.printf("Модель № %d удалена из проекта.", modelID);
+                System.out.printf("Модель № %d удалена из проекта: ", modelID);
                 break;
             }
         }
@@ -66,7 +66,7 @@ public class EditorBusinessLogicalLayer implements BusinessLogicalLayer {
         for (Texture texture: getAllTextures()) {
             if (texture.getId() == textureID) {
                 databaseAccess.removeEntity(texture);
-                System.out.printf("Текстура № %d удалена из проекта.", textureID);
+                System.out.printf("Текстура № %d удалена из проекта: ", textureID);
                 break;
             }
         }
