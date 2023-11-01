@@ -39,38 +39,39 @@ public class EditorBusinessLogicalLayer implements BusinessLogicalLayer {
     public void addModel3D() {
         Model3D model3D = new Model3D();
         databaseAccess.addEntity(model3D);
-        System.out.printf("Добавлена новая 3D-модель: " + model3D);
+        System.out.printf("Добавлена новая 3D-модель: " + model3D + "\n");
     }
 
     @Override
     public void deleteModel3D(int modelID) {
-        for (Model3D model: getAllModels()) {
-            if (model.getId() == modelID) {
-                databaseAccess.removeEntity(model);
-                System.out.printf("Модель № %d удалена из проекта: ", modelID);
-                break;
-            }
+        Model3D model3D = (Model3D) databaseAccess.searchEntityByID(modelID);
+        if (model3D != null) {
+            databaseAccess.removeEntity(model3D);
+            System.out.printf("Удалена модель № %d из проекта.\n", modelID);
         }
+        else throw new RuntimeException("3D-модель не найдена!");
     }
+
+
 
     @Override
     public void addTexture() {
         Texture texture = new Texture();
         databaseAccess.addEntity(texture);
-        System.out.printf("Добавлена новая текстура: " + texture);
+        System.out.printf("Добавлена новая текстура: " + texture + "\n");
 
     }
 
     @Override
     public void deleteTexture(int textureID) {
-        for (Texture texture: getAllTextures()) {
-            if (texture.getId() == textureID) {
-                databaseAccess.removeEntity(texture);
-                System.out.printf("Текстура № %d удалена из проекта: ", textureID);
-                break;
-            }
+        Texture texture = (Texture) databaseAccess.searchEntityByID(textureID);
+        if (texture != null) {
+            databaseAccess.removeEntity(texture);
+            System.out.printf("Удалена текстура № %d из проекта:\n", textureID);
         }
+        else throw new RuntimeException("Текстура не найдена!");
     }
+
 
     private Random random = new Random();
 

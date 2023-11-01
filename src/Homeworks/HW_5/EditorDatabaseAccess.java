@@ -24,6 +24,16 @@ public class EditorDatabaseAccess implements DatabaseAccess{
         editorDatabase.getAll().add(entity);
     }
 
+    @Override
+    public Entity searchEntityByID(int entityID) {
+        for (Entity entity: editorDatabase.getAll()) {
+            if (entity.getId() == entityID) {
+                return entity;
+            }
+        }
+        return null;
+    }
+
     /**
      * Удалить сущность из проекта
      * @param entity
