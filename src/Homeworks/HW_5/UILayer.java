@@ -13,6 +13,7 @@ public interface UILayer {
     void addModel3D();
     void deleteModel3D(int id);
     void addTexture();
+    void addTextureToModel(int modelID, int textureID);
     void deleteTexture(int id);
 
 }

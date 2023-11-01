@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class EditorBusinessLogicalLayer implements BusinessLogicalLayer {
 
-    private DatabaseAccess databaseAccess;
+    private final DatabaseAccess databaseAccess;
 
     public EditorBusinessLogicalLayer(DatabaseAccess databaseAccess){
         this.databaseAccess = databaseAccess;
@@ -52,14 +52,26 @@ public class EditorBusinessLogicalLayer implements BusinessLogicalLayer {
         else throw new RuntimeException("3D-модель не найдена!");
     }
 
-
-
     @Override
     public void addTexture() {
         Texture texture = new Texture();
         databaseAccess.addEntity(texture);
         System.out.printf("Добавлена новая текстура: " + texture + "\n");
 
+    }
+
+    @Override
+    public void addTextureToModel(int modelID, int textureID) {
+        Model3D model3D = (Model3D) databaseAccess.searchEntityByID(modelID);
+        if (model3D != null) {
+            Texture texture = (Texture) databaseAccess.searchEntityByID(textureID);
+            if (texture != null) {
+                model3D.getTextures().add(texture);
+                System.out.println("Вы успешно добавили новую текстуру в модель");
+            }
+            else throw new RuntimeException("Текстура не найдена!");
+        }
+        else throw new RuntimeException("3D-модель не найдена!");
     }
 
     @Override
@@ -73,7 +85,7 @@ public class EditorBusinessLogicalLayer implements BusinessLogicalLayer {
     }
 
 
-    private Random random = new Random();
+    private final Random random = new Random();
 
     private void processRender(Model3D model){
         try {

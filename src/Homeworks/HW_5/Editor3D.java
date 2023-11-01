@@ -124,6 +124,13 @@ public class Editor3D implements UILayer{
     }
 
     @Override
+    public void addTextureToModel(int modelID, int textureID) {
+        // Предусловие
+        checkProjectFile();
+        businessLogicalLayer.addTextureToModel(modelID, textureID);
+    }
+
+    @Override
     public void deleteTexture(int id) {
         // Предусловие
         checkProjectFile();

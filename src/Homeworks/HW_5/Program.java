@@ -18,6 +18,7 @@ public class Program {
         Scanner scanner = new Scanner(System.in);
         boolean f = true;
         while (f){
+            System.out.println("=======================");
             System.out.println("*** МОЙ 3D РЕДАКТОР ***");
             System.out.println("=======================");
             System.out.println(" 1. Открыть проект");
@@ -31,6 +32,7 @@ public class Program {
             System.out.println(" 9. Удалить 3D-модель");
             System.out.println("10. Добавить текстуру");
             System.out.println("11. Удалить текстуру");
+            System.out.println("12. Добавить текстуру в модель");
             System.out.println(" 0. ЗАВЕРШЕНИЕ РАБОТЫ ПРИЛОЖЕНИЯ");
             System.out.print("Пожалуйста, выберите пункт меню: ");
             if (scanner.hasNextInt()){
@@ -81,6 +83,19 @@ public class Program {
                                 editor3D.deleteTexture(textureID);
                             } else
                                 System.out.println("ID текстуры указан некорректно.");
+                        }
+                        case 12 -> {
+                            System.out.println("Введите номер модели: ");
+                            if (scanner.hasNextInt()) {
+                                int modelID = scanner.nextInt();
+                                scanner.nextLine();
+                                System.out.println("Введите номер текстуры, которую хотите добавить в модель: ");
+                                if (scanner.hasNextInt()) {
+                                    int textureID = scanner.nextInt();
+                                    scanner.nextLine();
+                                    editor3D.addTextureToModel(modelID, textureID);
+                                }
+                            }
                         }
                         default -> System.out.println("Укажите корректный пункт меню.");
                     }
