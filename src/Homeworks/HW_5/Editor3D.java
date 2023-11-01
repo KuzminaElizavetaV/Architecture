@@ -98,7 +98,6 @@ public class Editor3D implements UILayer{
         businessLogicalLayer.renderModel(models.get(i));
         long endTime = (System.currentTimeMillis() - startTime);
         System.out.printf("Операция выполнена за %d мс.\n", endTime);
-
     }
 
     @Override
@@ -120,7 +119,6 @@ public class Editor3D implements UILayer{
         // Предусловие
         checkProjectFile();
         businessLogicalLayer.addTexture();
-
     }
 
     @Override
@@ -135,13 +133,10 @@ public class Editor3D implements UILayer{
         // Предусловие
         checkProjectFile();
         businessLogicalLayer.deleteTexture(id);
-
     }
 
     private void checkProjectFile(){
         if (projectFile == null)
             throw new RuntimeException("Файл проекта не определен.");
     }
-
-
 }
