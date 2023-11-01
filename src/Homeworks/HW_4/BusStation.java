@@ -11,7 +11,7 @@ public class BusStation {
         this.ticketProvider = ticketProvider;
     }
 
-    public boolean checkTicket(String qrCode){
-        return ticketProvider.checkTicket(qrCode);
+    public void checkTicket(String qrCode){
+        ticketProvider.checkTicket(qrCode);
     }
 }

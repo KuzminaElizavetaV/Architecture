@@ -1,7 +1,5 @@
 package Homeworks.HW_4;
 
-import Seminars.Sem_04.task1.ComponentInfo;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Random;
@@ -38,7 +36,7 @@ public class Database {
 
     /**
      * Получить актуальную стоимость билета
-     * @return
+     * @return Стоимость
      */
     public double getTicketAmount(){
         return 55;
@@ -46,7 +44,7 @@ public class Database {
 
     /**
      * Получить идентификатор заявки на покупку билета
-     * @return
+     *
      */
     public Order createTicketOrder(int clientId, Ticket ticket) {
         this.tickets.add(ticket);

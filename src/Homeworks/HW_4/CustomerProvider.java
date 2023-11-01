@@ -40,6 +40,4 @@ public class CustomerProvider {
             System.out.println(customer);
         }
     }
-
-
 }
