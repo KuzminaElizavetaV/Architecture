@@ -50,6 +50,7 @@ public class Program {
                             editor3D.openProject(fileName);
                             System.out.println("Проект успешно открыт.");
                         }
+                        case 2 -> editor3D.saveProject();
                         case 3 -> editor3D.showProjectSettings();
                         case 4 -> editor3D.printAllModels();
                         case 5 -> editor3D.printAllTextures();
