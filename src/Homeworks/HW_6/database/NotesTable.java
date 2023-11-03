@@ -22,6 +22,27 @@ public class NotesTable {
     protected void deleteRecord(NotesRecord notesRecord) {
         records.remove(notesRecord);
     }
+    protected NotesRecord searchRecord(int id) {
+        for (NotesRecord record : records) {
+            if (record.getId() == id)
+                return record;
+        }
+        return null;
+    }
+
+    protected void changeTitle(int id, String text) {
+        NotesRecord record = searchRecord(id);
+        if (record != null)
+            record.setTitle(text);
+        else throw new RuntimeException("Запись не найдена");
+    }
+
+    protected void changeDetails(int id, String text) {
+        NotesRecord record = searchRecord(id);
+        if (record != null)
+            record.setDetails(text);
+        else throw new RuntimeException("Запись не найдена");
+    }
 
     //region Свойства
     public Collection<NotesRecord> getRecords() {

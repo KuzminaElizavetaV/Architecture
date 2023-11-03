@@ -11,6 +11,14 @@ public class NotesDatabase implements Database {
         notesTable.deleteRecord(notesRecord);
     }
 
+    public void updateNotesTitle(int noteID, String text){
+        notesTable.changeTitle(noteID, text);
+    }
+
+    public void updateNotesDetails(int noteID, String text) {
+        notesTable.changeDetails(noteID, text);
+    }
+
     //region Свойства
     public NotesTable getNotesTable() {
         return notesTable;

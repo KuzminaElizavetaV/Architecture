@@ -31,6 +31,7 @@ public class ConcreteNoteEditor implements NoteEditor {
 
     @Override
     public boolean edit(Note item) {
+
         return false;
     }
 

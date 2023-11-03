@@ -25,8 +25,13 @@ public class DatabaseContext extends DbContext implements NotesDatabaseContext {
     }
 
     @Override
-    public void update(int noteID) {
+    public void updateDetails(int noteID, String text) {
+        ((NotesDatabase)database).updateNotesDetails(noteID, text);
+    }
 
+    @Override
+    public void updateTitle(int noteID, String text) {
+        ((NotesDatabase)database).updateNotesTitle(noteID, text);
     }
 
     @Override
@@ -34,13 +39,6 @@ public class DatabaseContext extends DbContext implements NotesDatabaseContext {
         for (NotesRecord record : ((NotesDatabase)database).getNotesTable().getRecords())
             if (record.getId() == noteID)
                 ((NotesDatabase) database).delNoteRecord(record);
-
-
-
-
-
-
-
     }
 
     public Collection<Note> getAll(){
