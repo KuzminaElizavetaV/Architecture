@@ -10,8 +10,7 @@ public interface NotesDatabaseContext {
     //region Новые методы
     void create(String title, String details);
     Note read(int noteID);
-    void updateTitle(int noteID, String text);
-    void updateDetails(int noteID, String text);
+    void update(int noteID, String title, String details);
     void delete(int noteID);
     //endregion
 

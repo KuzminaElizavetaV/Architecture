@@ -22,6 +22,7 @@ public class NotesTable {
     protected void deleteRecord(NotesRecord notesRecord) {
         records.remove(notesRecord);
     }
+
     protected NotesRecord searchRecord(int id) {
         for (NotesRecord record : records) {
             if (record.getId() == id)
@@ -30,17 +31,12 @@ public class NotesTable {
         return null;
     }
 
-    protected void changeTitle(int id, String text) {
+    protected void changeNotesRecord(int id, String title, String details) {
         NotesRecord record = searchRecord(id);
-        if (record != null)
-            record.setTitle(text);
-        else throw new RuntimeException("Запись не найдена");
-    }
-
-    protected void changeDetails(int id, String text) {
-        NotesRecord record = searchRecord(id);
-        if (record != null)
-            record.setDetails(text);
+        if (record != null) {
+            record.setTitle(title);
+            record.setDetails(details);
+        }
         else throw new RuntimeException("Запись не найдена");
     }
 

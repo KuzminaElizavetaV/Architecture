@@ -8,7 +8,7 @@ import Homeworks.HW_6.application.interfaces.NotesPresenter;
 import Homeworks.HW_6.domain.Note;
 
 import java.util.Collection;
-import java.util.Optional;
+
 
 public class ConcreteNoteEditor implements NoteEditor {
 
@@ -25,14 +25,13 @@ public class ConcreteNoteEditor implements NoteEditor {
     @Override
     public boolean add(Note item) {
         dbContext.create(item.getTitle(), item.getDetails());
-        //dbContext.getAll().add(item);
         return dbContext.saveChanges();
     }
 
     @Override
     public boolean edit(Note item) {
-
-        return false;
+        dbContext.update(item.getId(), item.getTitle(), item.getDetails());
+        return dbContext.saveChanges();
     }
 
     @Override

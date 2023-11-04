@@ -15,6 +15,9 @@ public class NotesController extends Controller {
     public void removeNote(int noteID) {
         noteEditor.remove(noteEditor.getById(noteID));
     }
+    public void editNote(Note note) {
+        noteEditor.edit(note);
+    }
 
     private final NoteEditor noteEditor;
 

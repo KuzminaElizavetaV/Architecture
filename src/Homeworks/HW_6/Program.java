@@ -4,6 +4,7 @@ import Homeworks.HW_6.application.ConcreteNoteEditor;
 import Homeworks.HW_6.application.interfaces.NoteEditor;
 import Homeworks.HW_6.application.interfaces.NotesDatabaseContext;
 import Homeworks.HW_6.database.NotesDatabase;
+import Homeworks.HW_6.domain.Note;
 import Homeworks.HW_6.infrastructure.persistance.Database;
 import Homeworks.HW_6.infrastructure.persistance.DatabaseContext;
 import Homeworks.HW_6.presentation.queries.controllers.NotesController;
@@ -49,12 +50,41 @@ public class Program {
                                 if (scanner.hasNext()) {
                                     String details = scanner.nextLine();
                                     notesController.addNote(title, details);
+                                    System.out.println("Новая заметка успешно создана");
                                 }
                             }
                         }
                         case 2 -> {
-                            System.out.println("В разработке.....");
-                            f = false;
+                            System.out.println("Введите номер (ID) заметки:");
+                            if (scanner.hasNextInt()) {
+                                int noteID = scanner.nextInt();
+                                scanner.nextLine();
+                                Note note = noteEditor.getById(noteID);
+                                System.out.printf("Найдена заметка: %s\nРедактировать (да/нет)? ", note);
+                                if (scanner.hasNext()) {
+                                    String reply = scanner.nextLine();
+                                    switch (reply) {
+                                        case "да" -> {
+                                            System.out.println("Отредактируйте название заметки:");
+                                            if (scanner.hasNext()) {
+                                                String title = scanner.nextLine();
+                                                note.setTitle(title);
+                                                System.out.println("Отредактируйте подробную информацию о заметке:");
+                                                if (scanner.hasNext()) {
+                                                    String details = scanner.nextLine();
+                                                    note.setDetails(details);
+                                                    notesController.editNote(note);
+                                                    System.out.println("Заметка успешно отредактирована");
+                                                }
+                                            }
+                                        }
+                                        case "нет" -> System.out.println("Обратно в главное меню.");
+                                        default -> System.out.println("Укажите корректный ответ -> да или нет");
+                                    }
+                                } else
+                                    System.out.println("ID заметки указан некорректно.");
+                            }
+
                         }
                         case 3 -> {
                             System.out.println("Введите номер (ID) заметки:");

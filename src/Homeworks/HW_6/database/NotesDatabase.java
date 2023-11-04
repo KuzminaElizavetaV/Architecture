@@ -7,16 +7,12 @@ public class NotesDatabase implements Database {
     public void addNotesRecord(String notesTitle, String notesDetails) {
         notesTable.addRecord(notesTitle, notesDetails);
     }
-    public void delNoteRecord(NotesRecord notesRecord) {
+    public void delNotesRecord(NotesRecord notesRecord) {
         notesTable.deleteRecord(notesRecord);
     }
 
-    public void updateNotesTitle(int noteID, String text){
-        notesTable.changeTitle(noteID, text);
-    }
-
-    public void updateNotesDetails(int noteID, String text) {
-        notesTable.changeDetails(noteID, text);
+    public void updateNotesRecord(int noteID, String title, String details) {
+        notesTable.changeNotesRecord(noteID, title, details);
     }
 
     //region Свойства

@@ -1,7 +1,6 @@
 package Homeworks.HW_6.application.interfaces;
 
 import java.util.Collection;
-import java.util.Optional;
 
 public interface Editor<T, TId> {
 
