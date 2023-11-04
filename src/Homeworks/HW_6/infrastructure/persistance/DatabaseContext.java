@@ -18,7 +18,7 @@ public class DatabaseContext extends DbContext implements NotesDatabaseContext {
 
     @Override
     public Note read(int noteID) {
-        for (NotesRecord record : ((NotesDatabase)database).getNotesTable().getRecords())
+        for (NotesRecord record : ((NotesDatabase) database).getNotesTable().getRecords())
             if (record.getId() == noteID)
                 return new Note(record.getId(), record.getTitle(), record.getDetails());
         return null;
