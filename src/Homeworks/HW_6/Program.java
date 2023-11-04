@@ -91,8 +91,8 @@ public class Program {
                             if (scanner.hasNextInt()) {
                                 int noteID = scanner.nextInt();
                                 scanner.nextLine();
-                                System.out.printf("Заметка #%d удалена\n", noteID);
                                 notesController.removeNote(noteID);
+                                System.out.printf("Заметка #%d удалена\n", noteID);
 
                             } else
                                 System.out.println("ID заметки указан некорректно.");

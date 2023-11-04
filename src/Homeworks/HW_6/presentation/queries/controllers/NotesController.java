@@ -13,7 +13,10 @@ public class NotesController extends Controller {
         noteEditor.printNote(noteID);
     }
     public void removeNote(int noteID) {
-        noteEditor.remove(noteEditor.getById(noteID));
+        Note note = noteEditor.getById(noteID);
+        if (note != null)
+            noteEditor.remove(note);
+        else throw new RuntimeException("Удалить заметку нельзя, так как она не найдена");
     }
     public void editNote(Note note) {
         noteEditor.edit(note);
