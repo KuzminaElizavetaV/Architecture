@@ -93,7 +93,6 @@ public class Program {
                                 scanner.nextLine();
                                 notesController.removeNote(noteID);
                                 System.out.printf("Заметка #%d удалена\n", noteID);
-
                             } else
                                 System.out.println("ID заметки указан некорректно.");
                         }
